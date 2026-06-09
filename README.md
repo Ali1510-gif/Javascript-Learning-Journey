@@ -6,4 +6,5 @@ Master JavaScript for React and to become Full stack developer
 ## Topics Covered
 - What is JS
 - Variables
+- DataTypes
   
