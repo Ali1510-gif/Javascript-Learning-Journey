@@ -7,4 +7,5 @@ Master JavaScript for React and to become Full stack developer
 - What is JS
 - Variables
 - DataTypes
+- Memory Management in JS
   
