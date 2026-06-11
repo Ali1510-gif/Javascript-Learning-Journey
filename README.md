@@ -8,4 +8,5 @@ Master JavaScript for React and to become Full stack developer
 - Variables
 - DataTypes
 - Memory Management in JS
+- Operators
   
