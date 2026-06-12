@@ -11,4 +11,5 @@ Master JavaScript for React and to become Full stack developer
 - Operators
 - Loops
 - Conditionals
+- Number
   
