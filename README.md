@@ -13,4 +13,5 @@ Master JavaScript for React and to become Full stack developer
 - Conditionals
 - Number
 - Math
+- String
   
