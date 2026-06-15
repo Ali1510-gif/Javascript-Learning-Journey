@@ -14,4 +14,5 @@ Master JavaScript for React and to become Full stack developer
 - Number
 - Math
 - String
+- Date
   
