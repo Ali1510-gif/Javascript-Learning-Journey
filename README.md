@@ -16,4 +16,5 @@ Master JavaScript for React and to become Full stack developer
 - String
 - Date
 - Arrays
+- Object
   
