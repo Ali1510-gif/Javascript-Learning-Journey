@@ -18,4 +18,5 @@ Master JavaScript for React and to become Full stack developer
 - Arrays
 - Object
 - Function
+- How JS Execute code
   
