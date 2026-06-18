@@ -19,4 +19,7 @@ Master JavaScript for React and to become Full stack developer
 - Object
 - Function
 - How JS Execute code
+- Closure
+- Scope
+- High Order Function
   
