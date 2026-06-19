@@ -22,4 +22,10 @@ Master JavaScript for React and to become Full stack developer
 - Closure
 - Scope
 - High Order Function
+- forEach()
+- map()
+- filter()
+- reduce()
+- Set
+- Map
   
