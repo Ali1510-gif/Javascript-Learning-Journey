@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM Demo</title>
+    <style>
+      body {
+        font-family: Arial;
+        text-align: center;
+        margin-top: 40px;
+      }
+      .box {
+        padding: 20px;
+        border: 2px solid black;
+        margin: 10px;
+      }
+      .highlight {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title">DOM Introduction</h1>
+
+    <p class="text">This is a paragraph</p>
+    <p class="text">Another paragraph</p>
+
+    <div id="box" class="box">I am a box</div>
+
+    <button onclick="changeText()">Change Text</button>
+    <button onclick="changeStyle()">Change Style</button>
+    <button onclick="addElement()">Add Element</button>
+
+    <ul id="list">
+      <li>Item 1</li>
+      <li>Item 2</li>
+    </ul>
+
+    <script>
+      // 1. Selecting Elements
+      const title = document.getElementById("title");
+      const paragraphs = document.getElementsByClassName("text");
+      const box = document.querySelector("#box");
+
+      console.log(title);
+      console.log(paragraphs);
+      console.log(box);
+
+      // 2. Changing Content
+      function changeText() {
+        title.innerText = "Text Changed!";
+        paragraphs[0].innerHTML = "<b>Bold Paragraph</b>";
+      }
+
+      // 3. Changing Styles
+      function changeStyle() {
+        box.style.backgroundColor = "lightblue";
+        box.style.color = "red";
+        box.classList.toggle("highlight");
+      }
+
+      // 4. Creating & Adding Elements
+      function addElement() {
+        const newItem = document.createElement("li");
+        newItem.innerText = "New Item";
+        document.getElementById("list").appendChild(newItem);
+      }
+
+      // 5. Event Listener
+      box.addEventListener("click", function () {
+        alert("Box clicked!");
+      });
+
+      // 6. Traversing DOM
+      console.log(box.parentElement); // Parent
+      console.log(box.children); // Children
+      console.log(box.nextElementSibling); // Next element
+    </script>
+  </body>
+</html>
