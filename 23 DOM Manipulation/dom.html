@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM Master Demo</title>
+  </head>
+  <body style="background: black; color: white; font-family: sans-serif">
+    <h1 id="title">Hello Coder Army</h1>
+
+    <ul id="list"></ul>
+
+    <ul id="months">
+      <li>Jan</li>
+      <li>Feb</li>
+      <li>Mar</li>
+    </ul>
+
+    <script>
+      // ==========================
+      // 1. CREATE & INSERT ELEMENT
+      // ==========================
+
+      const heading = document.createElement("h2");
+      heading.textContent = "🚀 DOM is Powerful!";
+      heading.id = "demo-heading";
+
+      const title = document.getElementById("title");
+
+      // insert after
+      title.after(heading);
+
+      // ==========================
+      // 2. CLASS + STYLE + ATTRIBUTE
+      // ==========================
+
+      const subHeading = document.createElement("h3");
+      subHeading.textContent = "Festivals are coming 🎉";
+
+      // class
+      subHeading.classList.add("diwali", "holi");
+
+      // style
+      subHeading.style.color = "yellow";
+      subHeading.style.backgroundColor = "purple";
+      subHeading.style.padding = "10px";
+
+      // attribute
+      subHeading.setAttribute("custom", "hello-world");
+
+      title.before(subHeading);
+
+      console.log(subHeading.getAttribute("custom"));
+
+      // ==========================
+      // 3. ARRAY → LIST (BEST PRACTICE)
+      // ==========================
+
+      const foods = ["Milk", "Halwa", "Paneer", "Tofu", "Tea"];
+      const list = document.getElementById("list");
+
+      // using DocumentFragment (performance)
+      const fragment = document.createDocumentFragment();
+
+      foods.forEach((food) => {
+        const li = document.createElement("li");
+        li.textContent = food;
+        fragment.appendChild(li);
+      });
+
+      list.appendChild(fragment);
+
+      // ==========================
+      // 4. REMOVE ELEMENT
+      // ==========================
+
+      heading.remove(); // removing h2
+
+      // ==========================
+      // 5. INNERHTML vs TEXTCONTENT
+      // ==========================
+
+      const months = document.getElementById("months");
+
+      const imgItem = document.createElement("li");
+
+      // ❌ WRONG (shows as text)
+      imgItem.textContent = "<img src='https://picsum.photos/200'>";
+
+      // ✅ CORRECT (renders image)
+      imgItem.innerHTML = "<img src='https://picsum.photos/200'>";
+
+      months.prepend(imgItem);
+
+      // ==========================
+      // 6. ADVANCED INSERT METHODS
+      // ==========================
+
+      // create new item
+      const newMonth = document.createElement("li");
+      newMonth.textContent = "Apr";
+
+      // insert at specific position
+      months.children[1].after(newMonth);
+
+      // ==========================
+      // 7. BONUS: CLICK EVENT
+      // ==========================
+
+      list.addEventListener("click", (e) => {
+        if (e.target.tagName === "LI") {
+          e.target.style.color = "red";
+        }
+      });
+    </script>
+  </body>
+</html>
