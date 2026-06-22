@@ -29,5 +29,5 @@ Master JavaScript for React and to become Full stack developer
 - Set
 - Map
 - Introduction to DOM
-- Manipulation of DOM
+- CRUD of DOM
   
