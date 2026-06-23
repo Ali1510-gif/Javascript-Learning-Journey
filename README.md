@@ -30,4 +30,5 @@ Master JavaScript for React and to become Full stack developer
 - Map
 - Introduction to DOM
 - CRUD of DOM
+- Events in JS
   
