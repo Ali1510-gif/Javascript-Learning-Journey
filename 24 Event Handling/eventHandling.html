@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Listener Demo</title>
+  </head>
+
+  <body style="background-color: black; color: white; font-family: Arial">
+    <h1 id="first" style="background-color: brown; padding: 10px">
+      Hello Coder Army
+    </h1>
+
+    <h2>Event Delegation Example 👇</h2>
+
+    <div id="parent" style="display: flex; gap: 10px; flex-wrap: wrap">
+      <div
+        id="child1"
+        class="child"
+        style="height: 100px; width: 100px; background-color: orange"
+      >
+        First
+      </div>
+      <div
+        id="child2"
+        class="child"
+        style="height: 100px; width: 100px; background-color: green"
+      >
+        Second
+      </div>
+      <div
+        id="child3"
+        class="child"
+        style="height: 100px; width: 100px; background-color: red"
+      >
+        Third
+      </div>
+      <div
+        id="child4"
+        class="child"
+        style="height: 100px; width: 100px; background-color: pink"
+      >
+        Fourth
+      </div>
+      <div
+        id="child5"
+        class="child"
+        style="height: 100px; width: 100px; background-color: brown"
+      >
+        Fifth
+      </div>
+    </div>
+
+    <hr />
+
+    <h2>Bubbling Demo 👇</h2>
+
+    <div
+      id="grandparent"
+      style="
+        height: 300px;
+        width: 300px;
+        background-color: orange;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div
+        id="innerParent"
+        style="
+          height: 200px;
+          width: 200px;
+          background-color: red;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <div
+          id="child"
+          style="height: 100px; width: 100px; background-color: green"
+        ></div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    /* =========================
+   1. OLD WAY (onclick)
+========================= */
+
+    // const element = document.getElementById("first");
+
+    // element.onclick = function () {
+    //     element.textContent = "Strike is Coming";
+    // }
+
+    // ❌ Problem: Only ONE handler allowed
+
+    /* =========================
+   2. MODERN WAY (addEventListener)
+========================= */
+
+    const element = document.getElementById("first");
+
+    element.addEventListener("click", () => {
+      element.textContent = "Strike is Coming";
+    });
+
+    element.addEventListener("click", () => {
+      element.style.backgroundColor = "pink";
+    });
+
+    // ✅ Multiple handlers possible
+
+    /* =========================
+   3. EVENT DELEGATION (BEST)
+========================= */
+
+    const parent = document.getElementById("parent");
+
+    function handleClick(e) {
+      console.log("Clicked element:", e.target.id);
+
+      // Change only clicked child
+      e.target.textContent = "I am Clicked";
+
+      // Remove listener after first click
+      parent.removeEventListener("click", handleClick);
+    }
+
+    parent.addEventListener("click", handleClick);
+
+    /* =========================
+   4. INDIVIDUAL CHILD (LESS EFFICIENT)
+========================= */
+
+    // for (let child of parent.children) {
+    //     child.addEventListener('click', () => {
+    //         child.textContent = "Clicked";
+    //     });
+    // }
+
+    /* =========================
+   5. EVENT BUBBLING DEMO
+========================= */
+
+    const grandparent = document.getElementById("grandparent");
+    const innerParent = document.getElementById("innerParent");
+    const child = document.getElementById("child");
+
+    grandparent.addEventListener("click", (e) => {
+      console.log("Grandparent clicked");
+    });
+
+    innerParent.addEventListener("click", (e) => {
+      console.log("Parent clicked");
+    });
+
+    child.addEventListener("click", (e) => {
+      console.log("Child clicked");
+
+      // Uncomment to STOP bubbling
+      // e.stopPropagation();
+    });
+
+    /* =========================
+   6. EXTRA: EVENT OBJECT
+========================= */
+
+    element.addEventListener("click", (e) => {
+      console.log("Event Object:", e);
+      console.log("Target:", e.target);
+      console.log("Current Target:", e.currentTarget);
+    });
+  </script>
+</html>
