@@ -1,0 +1,30 @@
+body {
+  transition: background-color 0.5s ease;
+  background-color: #121212;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.color-card {
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Color buttons */
+.color-btn {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.color-btn:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px white;
+}
