@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Loop Master Demo</title>
+
+    <style>
+      body {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        font-family: Arial;
+        text-align: center;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #38bdf8;
+      }
+
+      button {
+        margin: 10px;
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+        border-radius: 6px;
+        font-weight: bold;
+      }
+
+      .btn {
+        background: #22c55e;
+      }
+      .btn2 {
+        background: #f59e0b;
+      }
+      .btn3 {
+        background: #ef4444;
+      }
+      .btn4 {
+        background: #6366f1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>⚡ JavaScript Event Loop Master Demo</h1>
+
+    <button class="btn" onclick="example1()">
+      Example 1 (Promise vs Timeout)
+    </button>
+    <button class="btn2" onclick="example2()">
+      Example 2 (Multiple Promises)
+    </button>
+    <button class="btn3" onclick="example3()">Example 3 (Blocking Code)</button>
+    <button class="btn4" onclick="example4()">Example 4 (Async/Await)</button>
+    <button class="btn" onclick="example5()">Example 5 (Nested Tasks)</button>
+    <button class="btn2" onclick="example6()">Example 6 (Fetch API)</button>
+
+    <script>
+      // =============================
+      // Example 1: Microtask vs Macrotask
+      // =============================
+      function example1() {
+        console.clear();
+        console.log("Example 1 Start");
+
+        setTimeout(() => {
+          console.log("setTimeout");
+        }, 0);
+
+        Promise.resolve().then(() => {
+          console.log("Promise");
+        });
+
+        console.log("Example 1 End");
+      }
+
+      // =============================
+      // Example 2: Multiple Promises
+      // =============================
+      function example2() {
+        console.clear();
+        console.log("Example 2 Start");
+
+        Promise.resolve().then(() => {
+          console.log("Promise 1");
+        });
+
+        Promise.resolve().then(() => {
+          console.log("Promise 2");
+        });
+
+        console.log("Example 2 End");
+      }
+
+      // =============================
+      // Example 3: Blocking Code
+      // =============================
+      function example3() {
+        console.clear();
+        console.log("Example 3 Start");
+
+        setTimeout(() => {
+          console.log("Timeout Finished");
+        }, 0);
+
+        // Heavy loop (blocking)
+        for (let i = 0; i < 1e8; i++) {}
+
+        console.log("Example 3 End");
+      }
+
+      // =============================
+      // Example 4: Async / Await
+      // =============================
+      async function example4() {
+        console.clear();
+        console.log("Example 4 Start");
+
+        async function test() {
+          console.log("Inside function");
+
+          await Promise.resolve();
+
+          console.log("After await");
+        }
+
+        test();
+
+        console.log("Example 4 End");
+      }
+
+      // =============================
+      // Example 5: Nested Event Loop
+      // =============================
+      function example5() {
+        console.clear();
+        console.log("Example 5 Start");
+
+        setTimeout(() => {
+          console.log("Timeout 1");
+
+          setTimeout(() => {
+            console.log("Timeout 2");
+          }, 0);
+        }, 0);
+
+        Promise.resolve().then(() => {
+          console.log("Promise");
+        });
+
+        console.log("Example 5 End");
+      }
+
+      // =============================
+      // Example 6: Fetch API
+      // =============================
+      function example6() {
+        console.clear();
+        console.log("Example 6 Start");
+
+        fetch("https://api.github.com/users").then(() =>
+          console.log("Fetch Done"),
+        );
+
+        setTimeout(() => {
+          console.log("Timeout");
+        }, 0);
+
+        console.log("Example 6 End");
+      }
+    </script>
+  </body>
+</html>
