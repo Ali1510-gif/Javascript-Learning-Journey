@@ -1,0 +1,46 @@
+body {
+  background: #0f172a;
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.todo-card {
+  max-width: 700px;
+  margin: auto;
+  background: #020617;
+  border-radius: 15px;
+}
+
+.list-group-item {
+  background: #1e293b;
+  border: none;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  cursor: grab;
+  transition: 0.3s;
+}
+
+.list-group-item:hover {
+  transform: scale(1.02);
+}
+
+/* Priority Colors */
+.high {
+  border-left: 5px solid #ef4444;
+}
+.medium {
+  border-left: 5px solid #f59e0b;
+}
+.low {
+  border-left: 5px solid #22c55e;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Drag effect */
+.dragging {
+  opacity: 0.5;
+}
