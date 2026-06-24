@@ -1,0 +1,32 @@
+body {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+.love-card {
+  max-width: 400px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: none;
+}
+
+.result-box {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Animation */
+.animate {
+  animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
