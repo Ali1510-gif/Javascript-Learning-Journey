@@ -1,0 +1,26 @@
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+.quote-card {
+  max-width: 600px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.quote-text {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  min-height: 100px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Button hover effects */
+button:hover {
+  transform: scale(1.05);
+  transition: 0.2s;
+}
