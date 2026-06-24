@@ -31,4 +31,5 @@ Master JavaScript for React and to become Full stack developer
 - Introduction to DOM
 - CRUD of DOM
 - Events in JS
+- 10 Basic Projects
   
