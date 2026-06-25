@@ -35,4 +35,5 @@ Master JavaScript for React and to become Full stack developer
 - Event Loop in JS
 - Callback hell
 - Promise
+- Async / Await
   
