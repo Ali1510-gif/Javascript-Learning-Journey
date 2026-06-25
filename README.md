@@ -34,4 +34,5 @@ Master JavaScript for React and to become Full stack developer
 - 10 Basic Projects
 - Event Loop in JS
 - Callback hell
+- Promise
   
