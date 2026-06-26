@@ -36,4 +36,5 @@ Master JavaScript for React and to become Full stack developer
 - Callback hell
 - Promise
 - Async / Await
+- Prototype & Classes
   
