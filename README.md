@@ -256,7 +256,7 @@ Whether you're a **beginner**, a **college student**, or an **aspiring Frontend/
 
 Detailed explanations, diagrams, examples, and interview notes are available here:
 
-👉 [https://app.notion.com/p/Notes-37ad9675f5a180149ae9f02c7666eeed](https://app.notion.com/p/Notes-37ad9675f5a180149ae9f02c7666eeed)
+👉 [https://app.notion.com/p/Notes-37ad9675f5a180149ae9f02c7666eeed](https://app.notion.com/p/Notes-37ad9675f5a180149ae9f02c7666eeed?source=copy_link)
 
 # ⭐ If you find this repository helpful...
 
